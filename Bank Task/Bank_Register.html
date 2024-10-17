@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .register-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container mt-5 my-4 p-5" style="background-color: rgba(85, 89, 88, 0.6);">
+        <h2 class="text-center">MY BANK</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" id="uname" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="acno" placeholder="Account Number" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+            <center>
+                <button type="button" class="btn btn-primary" onclick="register()">Register</button>
+            </center>
+        </form>
+        <center>
+            <a href="./Bank_Login.html" style="color: rgb(84, 91, 233); text-decoration: none; font-weight: bold;">
+                Already have an Account? Login
+            </a>
+        </center>
+    </div>
+
+    <script>
+        function register() {
+            const regstr = {
+                usernme: uname.value,
+                acntno: acno.value,
+                pswd: password.value
+            };
+
+            if (regstr.usernme === "" || regstr.acntno === "" || regstr.pswd === "") {
+                alert("Please fill in all details.");
+            } else if (localStorage.getItem(regstr.acntno)) {
+                alert("Account already exists.");
+            } else {
+                localStorage.setItem(regstr.acntno, JSON.stringify(regstr));
+                alert("Registered successfully!");
+                window.location = './Bank_Login.html';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

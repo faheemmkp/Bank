@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+   
+        <div  style="background-color:darkgrey;" >
+            
+                <center>
+                    <h1>Welcome User</h1>
+                    <h2>Online Banking Services</h2>
+                </center>
+        
+        </div>
+        <br><br>
+        <div class="container">
+            <div class="row">
+        <div class="col-8">
+            <h2 style="color: rgb(54, 54, 228); margin-left: 250px;">Deposit</h2>
+            <form style="border: 2px solid black; box-shadow: 0 4px 8px 0; margin: 50px; padding: 50px; width: 400px; margin-left: 120px; background-color: azure; margin-top: -5px;">
+                <input id="damount" type="text" placeholder="Enter the amount" style="border-radius: 2px; width: 300px; height: 40px;"><br><br>
+                <input id="dacno" type="text" placeholder="Enter Your Account Number" style="border-radius: 2px; width: 300px; height: 40px;"><br><br>
+                <input id="dpass" type="password" placeholder="Enter your password" style="border-radius: 2px; width: 300px; height: 40px;"><br><br>
+                <center><button type="button" onclick="deposit()" class="btn btn-outline-success">Deposit</button></center>
+                <!-- <center><h3 id="abc"></h3></center> -->
+            </form>
+        </div>
+       
+
+
+        
+
+       
+        <div class="col-4">
+            <h2 style="color: rgb(211, 0, 0);">Withdraw</h2>
+            <form
+                style="border: 2px solid black; box-shadow: 0 4px 8px 0; margin: 50px; padding: 50px; width: 400px; margin-left: -120px; background-color: azure; margin-top: -5px;">
+                <input id="wamnt" type="text" placeholder="Enter the amount"
+                    style="border-radius: 2px; width: 300px; height: 40px;"><br><br>
+                <input id="wacno" type="text " placeholder="Enter Your Account Number"
+                    style="border-radius: 2px; width: 300px; height: 40px;"><br><br>
+                <input id="wpass" type="text" placeholder="Enter your password"
+                    style="border-radius: 2px; width: 300px; height: 40px;">
+                <br><br>
+                <center><button type="button" onclick="withdraw()" class=" btn btn-outline-danger">Withdraw</button>
+                </center>
+               
+            </form>
+        </div>
+            
+            
+            
+   
+        </div>
+        </div>
+        <br>
+        <h3 id="zzz" style="margin-left: 350px; margin-top: -50px;"></h3>
+        <h3 id="efg" style="margin-left: 350px; margin-top: -10px;"></h3>
+            <h3 id="abc" style="margin-left: 900px; margin-top: -50px;"></h3>
+            <h3 id="hij" style="margin-left: 900px;"></h3>
+        <script>
+            let balance = 0; // Initialize with an initial balance (replace with your actual initial balance)
+                function deposit(){
+                    amount=damount.value
+                    console.log(amount);
+                    acno=dacno.value
+                    console.log(acno);
+                    pass = dpass.value
+                    console.log(pass);
+                    
+                    if(amount==""||acno==""||pass==""){
+                        alert("please fill the details")
+                    }else{
+                        if(localStorage.getItem(acno)){
+                            storeddata=JSON.parse(localStorage.getItem(acno))
+                            console.log(storeddata);
+                            if(storeddata.pswd==pass){
+                                                          
+                            
+                                htmldata = `
+                                <p style="font-size: medium;"> Money Credited...! ${amount} <p>
+                                `
+                                 balance += parseInt(amount)     
+                                zzz.innerHTML = htmldata
+                                
+                                efg.innerHTML = `<p style="font-size: medium;"> Current Balance : ${balance}`
+                            }else{
+                                alert("Incorrect Password")
+                            }
+                        }else{
+                            alert("Incorrect Account")
+                        }
+                    }
+                }
+                function withdraw(){
+                    mount=wamnt.value
+                    console.log(amount);
+                    AcNo=wacno.value
+                    console.log(acno);
+                    passw = wpass.value
+                    console.log(pass);
+                    
+                    if(mount==""||AcNo==""||passw==""){
+                        alert("please fill the details")
+                    }else{
+                        if(localStorage.getItem(AcNo)){
+                            storedata=JSON.parse(localStorage.getItem(AcNo))
+                            console.log(storedata);
+                            if(storedata.pswd==pass){
+                                  
+                                
+                                // cash = money - mount
+                                htmldatas = `
+                                <p style="font-size: medium;"> Money Debited...!  ${mount}<p>
+                                `
+                                
+                                balance -= parseInt(mount) 
+                                abc.innerHTML = htmldatas
+                                hij.innerHTML = `
+                                <p style="font-size: medium;"> Current Balance : ${balance}
+                                `
+                            }else{
+                                alert("Incorrect Password")
+                            }
+                        }else{
+                            alert("Incorrect Account")
+                        }
+                    }
+                }
+                
+
+        </script>
+</body>
+
+</html>

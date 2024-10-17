@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container mt-5 my-4 p-5" style="background-color: rgba(85, 89, 88, 0.6);">
+        <h2 class="text-center"><i class="fa-solid fa-building-columns"></i>MY BANK</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" id="acno" placeholder="Account number" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+            <center>
+                <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+            </center>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            const users = acno.value;
+            const passwordInput = password.value; // Corrected variable name
+
+            if (users === "" || passwordInput === "") {
+                alert("Please fill in all details.");
+            } else {
+                const storedData = localStorage.getItem(users);
+                if (storedData) {
+                    const data = JSON.parse(storedData);
+                    console.log(data);
+                    if (data.pswd === passwordInput) {
+                        alert("Login Successful!");
+                        window.location = './Bank_data.html';
+                    } else {
+                        alert("Incorrect account details.");
+                    }
+                } else {
+                    alert("Account does not exist.");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

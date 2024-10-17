@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bank - Online Banking</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#" style="font-weight: 700; font-size:xx-large; color: rgb(57, 49, 49);"><i class="fa-solid fa-building-columns"></i>My Bank</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <button onclick="registr()" class="btn btn-outline-primary">Register</button>
+                <button onclick="logn()" class="btn btn-outline-success">Login</button>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <h1 class="display-6" style="margin-top: 150px;">Online Bank</h1>
+        <p class="lead">Welcome to My Bank! <br>
+            Experience the convenience and <br>
+             security of online banking.</p>
+        <button class="btn btn-primary">Get Started</button>
+    </div>
+    <div class="col">
+    <img src="https://cdn.pixabay.com/photo/2020/02/18/11/03/bank-4859142_1280.png" alt="" width="570px" height="500px" style="margin-left: 700px; margin-top: -280px;">
+    </div>
+<br>
+<br>
+<br>
+<div class="col">
+    <img src="https://cdn.pixabay.com/photo/2021/07/12/10/55/bank-6406011_1280.png" alt="" width="600px" height="500px" style="margin-top: 50px; margin-left: 100px;">
+    </div>
+    <div class="container mt-5" style="margin-left: 800px;">
+        <h1 class="display-6" style="margin-top: -450px;">Vareity of Payment Choices</h1>
+        <p class="lead">Welcome to My Bank! <br>
+            Experience the convenience and <br>
+             security of online banking.</p>
+        <!-- <button class="btn btn-primary">Get Started</button> -->
+    </div> 
+    <br><br>
+    <footer class="bg-light py-4" style="margin-top: 200px;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <i class="fa-solid fa-building-columns"></i>
+              <h5>MY BANK</h5>
+              <ul class="list-unstyled">
+                <li>Order history</li>
+                <li>Wish list</li>
+                <li>Newsletter</li>
+                <li>Specials</li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h5>MY BANK PROVIDES</h5>
+              <ul class="list-unstyled">
+                <li>Services</li>
+                <li>Careers</li>
+                <li>Affiliate</li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h5>USEFUL LINKS</h5>
+              <ul class="list-unstyled">
+                <li>Privacy Policy</li>
+                <li>Terms & Conditions</li>
+                <li>FAQs</li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h5>CONTACT</h5>
+              <ul class="list-unstyled">
+                <li><i class="fas fa-phone"></i> +123 456 7890</li>
+                <li><i class="fas fa-envelope"></i> <a href="mailto:info@example.com">bank123@gmail.com</a></li>
+                <li><i class="fas fa-map-marker-alt"></i> 1234 Street Name, City, State, ZIP</li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-right mt-1">
+            <a href="#"><i class="fab fa-facebook"  style="color: rgb(5, 5, 169);"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a> 
+            <a href="#"><i class="fab fa-google-plus"></i></a>
+            <a href="#"><i class="fab fa-youtube" style="color: red;"></i></a>
+            <a href="#"><i class="fab fa-instagram"  style="color: red;"></i></a>
+            <a href="#"><i class="fab fa-pinterest"  style="color: red;"></i></a>
+          </div>
+        </div>
+      </footer>
+      <script>
+
+        function logn(){
+          window.location="./Bank_Login.html"
+        }
+
+        function registr(){
+          window.location = './Bank_Register.html'
+        }
+      </script>
+</body>
+</html>
